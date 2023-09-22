@@ -2,9 +2,11 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { onRemoveContact } from 'redux/contactSlice';
 
+
 const ContactList = () => {
   const dispatch = useDispatch();
 
+  
   const contacts = useSelector(state => state.contacts.contacts);
   const filter = useSelector(state => state.contacts.filter);
 
