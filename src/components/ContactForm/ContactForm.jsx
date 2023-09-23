@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contactsOperation'; 
+import { onAddContact } from 'redux/contactSlice'; 
 import styles from './ContactForm.module.css';
 
 
@@ -29,7 +29,7 @@ const ContactForm = () => {
       name,
       number,
     };
-    dispatch(addContact(newContact));
+    dispatch(onAddContact(newContact));
 
     setName('');
     setNumber('');
