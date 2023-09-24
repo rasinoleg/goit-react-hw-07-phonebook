@@ -6,7 +6,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://650c0b6a47af3fd22f66e963.mockapi.io';
 
-const contactsSlice = createSlice({
+const contactSlice = createSlice({
   name: 'tasks',
   initialState: {
     items: [],
@@ -55,6 +55,7 @@ const contactsSlice = createSlice({
   },
 });
 
-export default contactsSlice.actions;
+export default contactSlice.actions;
+console.log(contactSlice.actions)
 
 
