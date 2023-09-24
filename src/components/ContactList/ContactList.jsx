@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { onRemoveContact } from 'redux/contactSlice';
+import { deleteContact } from 'redux/contactsOperation';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -12,9 +12,9 @@ const ContactList = () => {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  const handleRemoveContact = useCallback(
+  const handleDeleteContact = useCallback(
     contactId => {
-      dispatch(onRemoveContact(contactId));
+      dispatch(deleteContact(contactId));
     },
     [dispatch]
   );
@@ -24,7 +24,7 @@ const ContactList = () => {
       {filteredContacts.map(contact => (
         <li key={contact.id}>
           {contact.name}: {contact.number}
-          <button onClick={() => handleRemoveContact(contact.id)}>
+          <button onClick={() => handleDeleteContact(contact.id)}>
             Delete
           </button>
         </li>
