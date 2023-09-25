@@ -1,11 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { fetchTasks } from 'redux/contactSlice';
-import { fetchTasks,createContact, deleteContact } from './contactsOperation';
-import axios from 'axios';
+import { fetchTasks, createContact, deleteContact } from './contactsOperation';
 
-
-
-axios.defaults.baseURL = 'https://650c0b6a47af3fd22f66e963.mockapi.io';
 
 export const contactSlice = createSlice({
   name: 'tasks',
@@ -56,7 +51,8 @@ export const contactSlice = createSlice({
   },
 });
 
-export default { createContact, deleteContact } = contactSlice.actions;
+const contactReducer = contactSlice.reducer;
 
+export default contactReducer
 
 
