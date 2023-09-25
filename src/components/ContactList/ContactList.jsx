@@ -7,7 +7,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
   useEffect( () => {
     dispatch(fetchTasks());
-  }, [] ) 
+  }, [dispatch] ) 
 
   const contacts = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.filter.filter);
